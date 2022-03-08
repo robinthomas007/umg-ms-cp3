@@ -1,6 +1,6 @@
 import './App.css';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import logo from './logo.svg';
 
@@ -18,7 +18,7 @@ function App() {
 
         <div className="body">
           <button onClick={() => setCount((count) => count + 1)}>
-            🪂 Click me : {count}
+            Click me : {count}
           </button>
 
           <p> Don&apos;t forgot to install Eslint and Prettier in Your Vscode.</p>
