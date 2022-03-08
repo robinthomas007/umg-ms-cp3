@@ -1,17 +1,19 @@
-import './App.css';
-
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
 import { useState } from 'react';
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="flex justify-center align-middle">
-      <h1 className="font-bold text-2xl text-blue-900">
-        React and Tailwind with Vitejs!
-      </h1>
-      <button onClick={() => setCount((count) => count + 1)}>Click me : {count}</button>
-    </div>
+    <>
+      <div className="flex justify-center align-middle">
+        <Typography variant="h3">React and Tailwind with Vitejs!</Typography>
+      </div>
+      <Button variant="contained" onClick={() => setCount((count) => count + 1)}>
+        Click me : {count}
+      </Button>
+    </>
   );
 }
 
