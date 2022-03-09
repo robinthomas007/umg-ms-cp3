@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import Typography from '@mui/material/Typography';
 import Counter from 'Counter';
 import Products from 'Products';
 import ThemeProvider from 'ThemeProvider';
@@ -20,6 +21,7 @@ export default function App() {
         }}
       >
         <ThemeToggler />
+        <Typography variant="h3">Content Protection V3</Typography>
         <Counter />
       </Box>
       <Products />
