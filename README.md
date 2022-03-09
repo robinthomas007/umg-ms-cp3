@@ -4,7 +4,7 @@ Created using [Vite](https://github.com/vitejs/vite)
 
 ## Pre-requisites
 
-- Node version >=12.2.0
+- Node version >=15.0.0
 - Yarn
 
 ## Editor Integrations
@@ -21,8 +21,8 @@ Note: Git hooks are set in place to format & lint code. See `package.json`
 Note: SSO is enabled with Github. So cloning with HTTP(S) requeires authentication headers. Use SSH.
 
 ```bash
-git clone <url>
-cd cp3
+git clone git@github.com:umg/umg-ms-cp3.git
+cd umg-ms-cp3
 yarn
 ```
 
