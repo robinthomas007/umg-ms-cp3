@@ -8,7 +8,7 @@ function Counter() {
   return (
     <>
       <div className="flex justify-center align-middle">
-        <Typography variant="h3">React and Tailwind with Vitejs!</Typography>
+        <Typography variant="h3">Content Protection V3</Typography>
       </div>
       <Button variant="contained" onClick={() => setCount((count) => count + 1)}>
         Click me : {count}

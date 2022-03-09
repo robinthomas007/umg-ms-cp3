@@ -1,5 +1,5 @@
 import { PaletteMode } from '@mui/material';
-import { amber, deepOrange, grey } from '@mui/material/colors';
+import { orange } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { colorModeAtom } from 'atoms';
@@ -7,25 +7,25 @@ import { useAtom } from 'jotai';
 import { PropsWithChildren, useMemo } from 'react';
 
 const LightThemePalette = {
-  primary: amber,
-  divider: amber[200],
-  text: {
-    primary: grey[900],
-    secondary: grey[800],
-  },
+  // primary: orange,
+  // divider: amber[200],
+  // text: {
+  //   primary: grey[900],
+  //   secondary: grey[800],
+  // },
 };
 
 const DarkThemePalette = {
-  primary: deepOrange,
-  divider: deepOrange[700],
-  background: {
-    default: deepOrange[900],
-    paper: deepOrange[900],
-  },
-  text: {
-    primary: '#fff',
-    secondary: grey[500],
-  },
+  primary: orange,
+  // divider: deepOrange[700],
+  // background: {
+  //   default: deepOrange[900],
+  //   paper: deepOrange[900],
+  // },
+  // text: {
+  //   primary: '#fff',
+  //   secondary: grey[500],
+  // },
 };
 
 const getDesignTokens = (mode: PaletteMode) => ({
@@ -33,7 +33,7 @@ const getDesignTokens = (mode: PaletteMode) => ({
     fontFamily: ['Roboto Condensed', 'sans-serif'].join(','),
     fontWeightLight: 300,
     fontWeightRegular: 400,
-    fontWeightMedium: 400,
+    fontWeightMedium: 700,
     fontWeightBold: 700,
   },
   components: {
