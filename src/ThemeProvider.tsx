@@ -32,8 +32,8 @@ const getDesignTokens = (mode: PaletteMode) => ({
   typography: {
     fontFamily: ['Roboto Condensed', 'sans-serif'].join(','),
     fontWeightLight: 300,
-    fontWeightRegular: 400,
-    fontWeightMedium: 400,
+    fontWeightRegular: 500,
+    fontWeightMedium: 600,
     fontWeightBold: 700,
   },
   components: {
