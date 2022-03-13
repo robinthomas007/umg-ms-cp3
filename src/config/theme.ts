@@ -3,12 +3,15 @@ import { blue, orange } from '@mui/material/colors';
 import { ThemeOptions } from '@mui/material/styles';
 import { atom } from 'jotai';
 
+export const DARK = 'dark';
+export const LIGHT = 'light';
+
 export const getThemeMode = (): PaletteMode => {
   const theme = localStorage.getItem('THEME');
-  if (theme === 'light' || theme === 'dark') {
+  if (theme === LIGHT || theme === DARK) {
     return theme;
   } else {
-    return 'light';
+    return LIGHT;
   }
 };
 
@@ -24,7 +27,7 @@ interface IPalette {
 }
 
 const LightThemePalette: IPalette = {
-  mode: 'light',
+  mode: LIGHT,
   primary: {
     light: blue[600],
     main: blue[800],
@@ -34,7 +37,7 @@ const LightThemePalette: IPalette = {
 };
 
 const DarkThemePalette: IPalette = {
-  mode: 'dark',
+  mode: DARK,
   primary: {
     light: orange[200],
     main: orange[400],
@@ -66,5 +69,5 @@ export const getTheme = (mode: PaletteMode): ITheme => ({
   shape: {
     borderRadius: 2,
   },
-  palette: mode === 'light' ? LightThemePalette : DarkThemePalette,
+  palette: mode === LIGHT ? LightThemePalette : DarkThemePalette,
 });
