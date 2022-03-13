@@ -1,9 +1,9 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Counter from 'Counter';
+import ThemeToggleButton from 'globalComponents/ThemeToggleButton';
 import Products from 'Products';
 import ThemeProvider from 'ThemeProvider';
-import ThemeToggler from 'ThemeToggler';
 
 export default function App() {
   return (
@@ -20,7 +20,7 @@ export default function App() {
           p: 5,
         }}
       >
-        <ThemeToggler />
+        <ThemeToggleButton />
         <Typography variant="h3">Content Protection V3</Typography>
         <Counter />
       </Box>
