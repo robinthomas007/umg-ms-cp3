@@ -1,13 +1,12 @@
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Counter from 'Counter';
-import ThemeToggleButton from 'globalComponents/ThemeToggleButton';
-import Products from 'Products';
-import ThemeProvider from 'ThemeProvider';
+import ThemeToggleButton from 'globalComponents/ThemeTogglerButton';
+import Counter from 'pages/Landing/components/Counter';
+import Products from 'pages/Landing/components/Products';
 
 export default function App() {
   return (
-    <ThemeProvider>
+    <>
       <Box
         sx={{
           display: 'flex',
@@ -25,6 +24,6 @@ export default function App() {
         <Counter />
       </Box>
       <Products />
-    </ThemeProvider>
+    </>
   );
 }
