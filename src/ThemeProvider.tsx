@@ -1,5 +1,5 @@
 import { PaletteMode } from '@mui/material';
-import { orange } from '@mui/material/colors';
+import { blue, orange } from '@mui/material/colors';
 import CssBaseline from '@mui/material/CssBaseline';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { colorModeAtom } from 'atoms';
@@ -7,25 +7,19 @@ import { useAtom } from 'jotai';
 import { PropsWithChildren, useMemo } from 'react';
 
 const LightThemePalette = {
-  // primary: orange,
-  // divider: amber[200],
-  // text: {
-  //   primary: grey[900],
-  //   secondary: grey[800],
-  // },
+  primary: {
+    light: blue[600],
+    main: blue[800],
+    dark: blue[900],
+  },
 };
 
 const DarkThemePalette = {
-  primary: orange,
-  // divider: deepOrange[700],
-  // background: {
-  //   default: deepOrange[900],
-  //   paper: deepOrange[900],
-  // },
-  // text: {
-  //   primary: '#fff',
-  //   secondary: grey[500],
-  // },
+  primary: {
+    light: orange[200],
+    main: orange[400],
+    dark: orange[600],
+  },
 };
 
 const getDesignTokens = (mode: PaletteMode) => ({
@@ -49,6 +43,9 @@ const getDesignTokens = (mode: PaletteMode) => ({
   palette: {
     mode,
     ...(mode === 'light' ? LightThemePalette : DarkThemePalette),
+  },
+  shape: {
+    borderRadius: 2,
   },
 });
 
