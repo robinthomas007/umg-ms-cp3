@@ -1,13 +1,10 @@
-interface IPaths {
-  users: string;
-}
-
 const baseUrl = 'https://sonplaceholder.typicode.com/';
 
-const paths: IPaths = {
+type PathName = 'users';
+const paths: Record<PathName, string> = {
   users: 'users',
 };
 
-export function getPath(path: keyof IPaths) {
+export function getPath(path: PathName) {
   return new URL(paths[path], baseUrl).href;
 }
