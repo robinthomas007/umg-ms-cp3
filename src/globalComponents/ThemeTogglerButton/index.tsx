@@ -1,7 +1,8 @@
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import { PaletteMode } from '@mui/material';
-import Fab from '@mui/material/Fab';
+import IconButton from '@mui/material/IconButton';
+import Tooltip from '@mui/material/Tooltip';
 import { DARK, LIGHT, setThemeMode, themeModeAtom } from 'config/theme';
 import { useAtom } from 'jotai';
 
@@ -19,8 +20,10 @@ export default function ThemeToggler() {
   };
 
   return (
-    <Fab color="primary" onClick={() => toggleColorMode(mode)}>
-      {mode === DARK ? <LightModeIcon /> : <DarkModeIcon />}
-    </Fab>
+    <Tooltip title="Toggle Light/Dark Theme">
+      <IconButton color="warning" onClick={() => toggleColorMode(mode)}>
+        {mode === DARK ? <LightModeIcon /> : <DarkModeIcon />}
+      </IconButton>
+    </Tooltip>
   );
 }
