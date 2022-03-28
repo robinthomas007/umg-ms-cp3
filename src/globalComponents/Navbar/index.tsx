@@ -2,8 +2,8 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import ThemeToggleButton from 'globalComponents/ThemeTogglerButton';
+import Logo from 'static/logo.png';
 
 const Navbar = () => {
   return (
@@ -11,9 +11,9 @@ const Navbar = () => {
       <AppBar position="fixed">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography variant="h4" component="div" sx={{ flexGrow: 1 }}>
-              CP3
-            </Typography>
+            <Box sx={{ flexGrow: 1, mb: 0, height: '4rem' }}>
+              <img src={Logo} alt="logo" style={{ height: '4rem' }} />
+            </Box>
             <ThemeToggleButton />
           </Toolbar>
         </Container>
