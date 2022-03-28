@@ -1,5 +1,6 @@
 import FilterListIcon from '@mui/icons-material/FilterList';
 import Button from '@mui/material/Button';
+import Fab from '@mui/material/Fab';
 import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Tooltip from '@mui/material/Tooltip';
@@ -11,9 +12,9 @@ export default function TableTools() {
       sx={{ width: '100%', display: 'flex', justifyContent: 'space-between', p: 1 }}
     >
       <Tooltip title="Filter Projects">
-        <IconButton>
+        <Fab size="medium" color="primary">
           <FilterListIcon />
-        </IconButton>
+        </Fab>
       </Tooltip>
 
       <SearchBar />
