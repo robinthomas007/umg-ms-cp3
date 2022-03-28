@@ -3,7 +3,8 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Toolbar from '@mui/material/Toolbar';
 import ThemeToggleButton from 'globalComponents/ThemeTogglerButton';
-import Logo from 'static/logo.png';
+
+import ElasticLogo from './components/ElasticLogo';
 
 const Navbar = () => {
   return (
@@ -11,9 +12,7 @@ const Navbar = () => {
       <AppBar position="fixed">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Box sx={{ flexGrow: 1, mb: 0, height: '4rem' }}>
-              <img src={Logo} alt="logo" style={{ height: '4rem' }} />
-            </Box>
+            <ElasticLogo />
             <ThemeToggleButton />
           </Toolbar>
         </Container>
