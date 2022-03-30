@@ -1,5 +1,5 @@
 import Table from 'pages/Landing/components/Table';
-import TableTools from 'pages/Landing/components/TableTools';
+import TableTools from 'pages/Landing/components/Tools';
 
 export default function App() {
   return (
