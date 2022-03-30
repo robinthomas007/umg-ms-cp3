@@ -1,3 +1,4 @@
+import type { PathName } from 'API';
 import { getPath } from 'API';
 import { useQuery } from 'react-query';
 
@@ -8,8 +9,13 @@ export type User = {
   email: string;
 };
 
-const fetchUsers = async (): Promise<any> => {
-  const url = getPath('users');
+export type Post = {
+  id: number;
+  title: string;
+};
+
+const fetchAsync = async (path: PathName): Promise<any> => {
+  const url = getPath(path);
   const response = await fetch(url);
   if (response.ok) {
     const data = await response.json();
@@ -20,5 +26,9 @@ const fetchUsers = async (): Promise<any> => {
 };
 
 export const useGetUsers = () => {
-  return useQuery<User[], Error>('users', fetchUsers);
+  return useQuery<User[], Error>('users', () => fetchAsync('users'));
+};
+
+export const useGetPosts = () => {
+  return useQuery<Post[], Error>('posts', () => fetchAsync('posts'));
 };

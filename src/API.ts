@@ -1,8 +1,10 @@
 const baseUrl: string = (import.meta.env.VITE_BASE_URL || '').toString();
 
-type PathName = 'users';
+export type PathName = 'users' | 'posts';
+
 const paths: Record<PathName, string> = {
   users: 'users',
+  posts: 'posts',
 };
 
 export function getPath(path: PathName) {

@@ -7,10 +7,10 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import TableRowSkeleton from 'globalComponents/TableRowSkeleton';
 
-import { useGetUsers } from '../query';
+import { useGetPosts } from '../query';
 
 export default function BasicTable() {
-  const { data } = useGetUsers();
+  const { data } = useGetPosts();
 
   return (
     <TableContainer component={Paper}>
@@ -20,17 +20,15 @@ export default function BasicTable() {
             <TableCell>ID</TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Username</TableCell>
-            <TableCell>Email</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
           {data ? (
             data.map((row) => (
-              <TableRow key={row.name}>
+              <TableRow key={row.id}>
                 <TableCell>{row.id}</TableCell>
-                <TableCell>{row.name}</TableCell>
-                <TableCell>{row.username}</TableCell>
-                <TableCell>{row.email}</TableCell>
+                <TableCell>{row.title}</TableCell>
+                <TableCell>{row.title}</TableCell>
               </TableRow>
             ))
           ) : (
