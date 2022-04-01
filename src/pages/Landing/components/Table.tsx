@@ -37,7 +37,7 @@ export default function BasicTable() {
         <TableBody>
           {data ? (
             data.map((row) => (
-              <TableRow key={row.id}>
+              <TableRow hover key={row.id}>
                 <TableCell padding="checkbox">
                   <Checkbox color="primary" />
                 </TableCell>
