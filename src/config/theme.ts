@@ -66,6 +66,9 @@ export const getTheme = (mode: PaletteMode): ITheme => ({
     fontWeightRegular: 500,
     fontWeightMedium: 600,
     fontWeightBold: 700,
+    button: {
+      textTransform: 'none',
+    },
   },
   shape: {
     borderRadius: 2,
