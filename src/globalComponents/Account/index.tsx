@@ -14,7 +14,7 @@ const Account = () => {
       <IconButton disableRipple sx={{ color: 'navbarIcon' }}>
         <AccountCircle />
       </IconButton>
-      <span>Welcome</span>
+      <span>Welcome, Ryan</span>
     </Box>
   );
 };

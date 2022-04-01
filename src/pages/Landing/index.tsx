@@ -1,13 +1,16 @@
+import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
+import SearchNFilter from 'pages/Landing/components/SearchNFilter';
 import Table from 'pages/Landing/components/Table';
-import TableTools from 'pages/Landing/components/Tools';
 
 export default function App() {
   return (
     <>
-      <TableTools />
-      <div style={{ paddingRight: '1rem', paddingLeft: '1rem' }}>
+      <SearchNFilter />
+      <Divider />
+      <Box sx={{ p: 1 }}>
         <Table />
-      </div>
+      </Box>
     </>
   );
 }
