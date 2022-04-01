@@ -11,7 +11,7 @@ const Account = () => {
         justifyContent: 'center',
       }}
     >
-      <IconButton disableRipple>
+      <IconButton disableRipple sx={{ color: 'navbarIcon' }}>
         <AccountCircle />
       </IconButton>
       <span>Welcome</span>

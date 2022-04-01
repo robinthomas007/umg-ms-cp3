@@ -24,6 +24,7 @@ export const themeModeAtom = atom<PaletteMode>(getThemeMode());
 interface IPalette {
   mode: PaletteMode;
   primary: PaletteColor;
+  navbarIcon: string;
 }
 
 const LightThemePalette: IPalette = {
@@ -34,6 +35,7 @@ const LightThemePalette: IPalette = {
     dark: blue[900],
     contrastText: '#fff',
   },
+  navbarIcon: '#fff',
 };
 
 const DarkThemePalette: IPalette = {
@@ -44,6 +46,7 @@ const DarkThemePalette: IPalette = {
     dark: orange[600],
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
+  navbarIcon: '#fff',
 };
 
 interface ITheme extends ThemeOptions {}
