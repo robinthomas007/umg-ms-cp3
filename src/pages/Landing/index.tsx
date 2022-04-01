@@ -6,7 +6,9 @@ import TableTools from 'pages/Landing/components/TableTools';
 export default function App() {
   return (
     <>
-      <SearchNFilter />
+      <Box pt={2}>
+        <SearchNFilter />
+      </Box>
       <Box sx={{ p: 4 }}>
         <TableTools />
         <Divider />
