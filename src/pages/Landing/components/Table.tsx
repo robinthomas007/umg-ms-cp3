@@ -1,6 +1,7 @@
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
 import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import Checkbox from '@mui/material/Checkbox';
 import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
@@ -22,7 +23,9 @@ export default function BasicTable() {
       <Table>
         <TableHead>
           <TableRow>
-            <TableCell>ID</TableCell>
+            <TableCell padding="checkbox">
+              <Checkbox color="primary" />
+            </TableCell>
             <TableCell>Name</TableCell>
             <TableCell>Username</TableCell>
             <TableCell>Email</TableCell>
@@ -35,7 +38,9 @@ export default function BasicTable() {
           {data ? (
             data.map((row) => (
               <TableRow key={row.id}>
-                <TableCell>{row.id}</TableCell>
+                <TableCell padding="checkbox">
+                  <Checkbox color="primary" />
+                </TableCell>
                 <TableCell>{row.name}</TableCell>
                 <TableCell>{row.username}</TableCell>
                 <TableCell>{row.email}</TableCell>
