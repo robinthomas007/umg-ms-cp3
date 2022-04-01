@@ -1,4 +1,4 @@
-import { PaletteColor, PaletteMode } from '@mui/material';
+import { PaletteMode, PaletteOptions } from '@mui/material';
 import { blue, orange } from '@mui/material/colors';
 import { ThemeOptions } from '@mui/material/styles';
 import { atom } from 'jotai';
@@ -21,9 +21,7 @@ export const setThemeMode = (mode: PaletteMode): void => {
 
 export const themeModeAtom = atom<PaletteMode>(getThemeMode());
 
-interface IPalette {
-  mode: PaletteMode;
-  primary: PaletteColor;
+interface IPalette extends PaletteOptions {
   navbarIcon: string;
 }
 
