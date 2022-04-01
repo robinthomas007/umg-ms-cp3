@@ -1,4 +1,9 @@
+import DeleteIcon from '@mui/icons-material/Delete';
+import EditIcon from '@mui/icons-material/Edit';
+import QuestionAnswerIcon from '@mui/icons-material/QuestionAnswer';
+import IconButton from '@mui/material/IconButton';
 import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -22,6 +27,8 @@ export default function BasicTable() {
             <TableCell>Username</TableCell>
             <TableCell>Email</TableCell>
             <TableCell>Phone</TableCell>
+            <TableCell align="center">Notes</TableCell>
+            <TableCell align="center">Actions</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -33,10 +40,25 @@ export default function BasicTable() {
                 <TableCell>{row.username}</TableCell>
                 <TableCell>{row.email}</TableCell>
                 <TableCell>{row.phone}</TableCell>
+                <TableCell padding="none" align="center">
+                  <IconButton color="default">
+                    <QuestionAnswerIcon />
+                  </IconButton>
+                </TableCell>
+                <TableCell padding="none" align="center">
+                  <Stack justifyContent={'center'} direction="row" spacing={1}>
+                    <IconButton>
+                      <EditIcon />
+                    </IconButton>
+                    <IconButton>
+                      <DeleteIcon />
+                    </IconButton>
+                  </Stack>
+                </TableCell>
               </TableRow>
             ))
           ) : (
-            <TableRowSkeleton columns={4} />
+            <TableRowSkeleton columns={7} />
           )}
         </TableBody>
       </Table>

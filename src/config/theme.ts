@@ -34,6 +34,9 @@ const LightThemePalette: IPalette = {
     contrastText: '#fff',
   },
   navbarIcon: '#fff',
+  action: {
+    active: '#212121',
+  },
 };
 
 const DarkThemePalette: IPalette = {
