@@ -6,7 +6,7 @@ export default function AuthorizedLayout() {
   return (
     <>
       <Navbar />
-      <Box component="main" sx={{ mt: 8, backgroundColor: 'primary.contrastText' }}>
+      <Box component="main" sx={{ mt: 8 }}>
         <Outlet />
       </Box>
     </>
