@@ -32,6 +32,14 @@ CONTEXT=${CONTEXT:-""}
 YAML_PATH=${YAML_PATH:-"devops/app.yaml"}
 YAML_DIR=${YAML_DIR:-"devops/k8s"}
 
+IMAGE_TAG="$GIT_COMMIT-$ENV"
+
+USER_DATA='{
+    "VAULT_KV_PATH": "cp3/web/'$ENV'"
+}'
+
+USER_DATA=`echo "$USER_DATA" | base64`
+
 cat > trigger.json <<-EOF
 {
     "API": {
@@ -45,7 +53,7 @@ cat > trigger.json <<-EOF
     },
     "Image": {
         "URL": "$IMAGE_URL",
-        "Tag": "$GIT_COMMIT",
+        "Tag": "$IMAGE_TAG",
         "Dockerfile": "$DOCKERFILE",
         "Context": "$CONTEXT"
     },
