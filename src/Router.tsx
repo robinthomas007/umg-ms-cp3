@@ -1,4 +1,4 @@
-import AuthorizedLayout from 'Layouts/AuthorizedLayout';
+import Layout from 'Layout';
 import { lazy, Suspense } from 'react';
 import { BrowserRouter, useRoutes } from 'react-router-dom';
 
@@ -7,7 +7,7 @@ const Landing = lazy(() => import('pages/Landing'));
 function Routes() {
   let element = useRoutes([
     {
-      element: <AuthorizedLayout />,
+      element: <Layout />,
       children: [{ path: '/', element: <Landing /> }],
     },
   ]);
