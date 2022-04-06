@@ -2,8 +2,11 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
 import { Button, MenuItem, Select, Stack, Toolbar, Typography } from '@mui/material';
 import Pagination from '@mui/material/Pagination';
+import { useAtom } from 'jotai';
+import { IsModalOpenAtom } from 'pages/Landing/components/CreateOrEdit/state';
 
 export default function TableTools() {
+  const [, openCreateProject] = useAtom(IsModalOpenAtom);
   return (
     <Toolbar disableGutters sx={{ display: 'flex', justifyContent: 'space-between' }}>
       <Typography variant="subtitle2" sx={{ fontWeight: 'bold' }}>
@@ -17,7 +20,11 @@ export default function TableTools() {
       </Typography>
       <Pagination count={10} shape="rounded" color="primary" />
       <Stack spacing={1} direction="row">
-        <Button variant="outlined" startIcon={<AddCircleIcon />}>
+        <Button
+          variant="outlined"
+          startIcon={<AddCircleIcon />}
+          onClick={() => openCreateProject(true)}
+        >
           Create
         </Button>
         <Button variant="outlined" startIcon={<FileDownloadIcon />}>
