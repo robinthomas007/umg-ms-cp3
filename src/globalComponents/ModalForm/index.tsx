@@ -1,26 +1,32 @@
 import { Box, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material';
-import ModalCloseButton from 'globalComponents/Modal/ModalCloseButton';
+import ModalCloseButton from 'globalComponents/ModalForm/ModalCloseButton';
+import Actions from 'globalComponents/ModalForm/ModalFormActions';
 import SlideDownTransition from 'globalComponents/SlideDownTransition';
 import * as React from 'react';
 
 interface ModalProps {
   open: boolean;
   title: string;
-  onClose?: Function;
+  onSubmit: React.FormEventHandler<HTMLFormElement>;
+  onClose: Function;
+  defaultActions?: boolean;
+  onCancel?: React.MouseEventHandler<HTMLButtonElement>;
   actions?: React.ReactNode;
-  form?: boolean;
 }
 
-const Modal: React.FC<ModalProps> = ({
+const ModalForm: React.FC<ModalProps> = ({
   title,
   children,
   open,
   onClose,
   actions,
-  form,
+  onCancel,
+  onSubmit,
+  defaultActions,
 }) => {
   return (
     <Dialog
+      keepMounted
       disableEscapeKeyDown
       fullWidth
       maxWidth="md"
@@ -28,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({
       TransitionComponent={SlideDownTransition}
       onClose={(event, reason) => {
         if (reason !== 'backdropClick' && onClose) {
-          onClose(event, reason);
+          onClose(event);
         }
       }}
     >
@@ -42,12 +48,14 @@ const Modal: React.FC<ModalProps> = ({
           }}
         />
       </DialogTitle>
-      <Box component={form ? 'form' : 'div'}>
+      <Box onSubmit={onSubmit} component="form">
         <DialogContent style={{ paddingTop: '1rem' }}>{children}</DialogContent>
-        <DialogActions sx={{ margin: '1rem' }}>{actions}</DialogActions>
+        <DialogActions sx={{ margin: '1rem' }}>
+          {defaultActions ? <Actions onCancel={onCancel} /> : actions}
+        </DialogActions>
       </Box>
     </Dialog>
   );
 };
 
-export default Modal;
+export default ModalForm;

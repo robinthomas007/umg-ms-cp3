@@ -1,8 +1,6 @@
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
-import HighlightOffIcon from '@mui/icons-material/HighlightOff';
-import { Button, TextField } from '@mui/material';
+import { TextField } from '@mui/material';
 import Stack from '@mui/material/Stack';
-import Modal from 'globalComponents/Modal';
+import ModalForm from 'globalComponents/ModalForm';
 import { useAtom } from 'jotai';
 
 import { IsModalOpenAtom } from './state';
@@ -12,25 +10,13 @@ export default function CreateOrEditProject() {
   const handleClose = () => setOpen(false);
 
   return (
-    <Modal
-      form
+    <ModalForm
       open={open}
       onClose={handleClose}
+      onCancel={handleClose}
+      onSubmit={handleClose}
       title={'Create Project'}
-      actions={
-        <Stack direction="row" spacing={2}>
-          <Button
-            variant="outlined"
-            onClick={handleClose}
-            startIcon={<HighlightOffIcon />}
-          >
-            Cancel
-          </Button>
-          <Button startIcon={<CheckCircleIcon />} variant="contained">
-            Submit
-          </Button>
-        </Stack>
-      }
+      defaultActions
     >
       <Stack spacing={4}>
         <Stack direction="row" spacing={4}>
@@ -51,6 +37,6 @@ export default function CreateOrEditProject() {
         </Stack>
         <TextField fullWidth label="Policy" variant="outlined" />
       </Stack>
-    </Modal>
+    </ModalForm>
   );
 }
