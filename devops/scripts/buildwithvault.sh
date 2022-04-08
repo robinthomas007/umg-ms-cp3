@@ -2,4 +2,4 @@
 
 . ./devops/scripts/vaultsecrets.sh
 
-npm run build
+yarn run build --mode=$ENV
