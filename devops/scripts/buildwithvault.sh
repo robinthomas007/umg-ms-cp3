@@ -2,4 +2,4 @@
 
 . ./devops/scripts/vaultsecrets.sh
 
-yarn run build --mode=$ENV
+yarn run build --mode=$MODE
