@@ -19,6 +19,7 @@ spec:
         app: cp3-web
         version: v1
     spec:
+      serviceAccountName: cp3-api
       containers:
       - name: cp3-web
         image: docker-registry.umusic.com/cp3/cp3-web:v0.0.1
