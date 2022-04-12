@@ -1,5 +1,8 @@
 FROM node:17.4.0
 
+ARG USER_DATA
+ENV USER_DATA $USER_DATA
+
 WORKDIR /src
 
 RUN apt-get update -y && apt-get install -y jq
