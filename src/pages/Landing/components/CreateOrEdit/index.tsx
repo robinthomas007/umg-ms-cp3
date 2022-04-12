@@ -2,11 +2,10 @@ import { TextField } from '@mui/material';
 import Stack from '@mui/material/Stack';
 import ModalForm from 'globalComponents/ModalForm';
 import { useAtom } from 'jotai';
-
-import { IsModalOpenAtom } from './state';
+import { IsCreateOrEditModalOpenAtom } from 'pages/Landing/state';
 
 export default function CreateOrEditProject() {
-  const [open, setOpen] = useAtom(IsModalOpenAtom);
+  const [open, setOpen] = useAtom(IsCreateOrEditModalOpenAtom);
   const handleClose = () => setOpen(false);
 
   return (

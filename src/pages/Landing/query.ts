@@ -1,35 +1,59 @@
-import type { PathName } from 'API';
-import { getPath } from 'API';
-import { useQuery } from 'react-query';
+import getPath from 'API';
+import axios from 'axios';
+import { useMutation } from 'react-query';
 
-export type User = {
-  id: number;
+export interface Track {
+  trackId: number;
+  title: number;
+  label: string;
+  artist: number;
+  isrc?: string;
+  releaseDate: Date;
+  leakDate: Date;
+  createdDate: Date;
+}
+
+interface LabelFacet {
+  id: string;
+  count: string;
   name: string;
-  username: string;
-  email: string;
-  phone: string;
-};
+}
 
-export type Post = {
-  id: number;
-  title: string;
-};
+export interface SearchTrackResponse {
+  tracks: Track[];
+  totalItems: string;
+  totalPages: string;
+  pageNumber: string;
+  itemsPerPage: string;
+  labelFacets: LabelFacet[];
+}
 
-const fetchAsync = async (path: PathName): Promise<any> => {
-  const url = getPath(path);
-  const response = await fetch(url);
-  if (response.ok) {
-    const data = await response.json();
-    return data;
-  } else {
-    throw new Error(response.statusText);
-  }
-};
+interface Filter {
+  labelIds?: string[];
+  releaseFrom?: Date;
+  releaseTo?: Date;
+}
 
-export const useGetUsers = () => {
-  return useQuery<User[], Error>('users', () => fetchAsync('users'));
-};
+export type ItemsPerPage = '10' | '25' | '50';
 
-export const useGetPosts = () => {
-  return useQuery<Post[], Error>('posts', () => fetchAsync('posts'));
+export interface SearchTrackRequest {
+  searchTerm?: string;
+  itemsPerPage: ItemsPerPage;
+  pageNumber: string;
+  sortColumn?: string;
+  sortOrder?: string;
+  filter?: Filter;
+}
+
+export const useSearchTracks = () => {
+  const url = getPath('TrackSearch');
+
+  const searchTracks = async (
+    search: SearchTrackRequest,
+  ): Promise<SearchTrackResponse> => {
+    const response = await axios.post(url, { searchCriteria: search });
+    return response.data;
+  };
+
+  return useMutation(searchTracks);
 };
