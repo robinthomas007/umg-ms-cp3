@@ -3,18 +3,16 @@ import Button from '@mui/material/Button';
 import InputAdornment from '@mui/material/InputAdornment';
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { useAtom } from 'jotai';
-import { pageNumberAtom, searchAtom } from 'pages/Landing/state';
+import { searchAtom } from 'pages/Landing/state';
 import { KeyboardEvent, useState } from 'react';
 
 export default function Search() {
   const [search, setSearch] = useAtom(searchAtom);
   const [input, setInput] = useState(search);
-  const [, setPageNumber] = useAtom(pageNumberAtom);
 
   const handleEnter = (e: KeyboardEvent) => {
     if (e.key === 'Enter') {
       setSearch(input);
-      setPageNumber('1');
     }
   };
 

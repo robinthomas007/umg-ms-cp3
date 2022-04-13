@@ -14,13 +14,13 @@ import DataHead, { DataCell, HeadCell, Order } from 'globalComponents/DataTable/
 import TableRowSkeleton from 'globalComponents/TableRowSkeleton';
 import { Track } from 'pages/Landing/query';
 // import { useAtom } from 'jotai';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 
 interface Props {
   tracks?: Track[];
 }
 
-export default function BasicTable({ tracks }: Props) {
+function TrackTable({ tracks }: Props) {
   const [order, setOrder] = useState<Order>('desc');
   const [sortedColumn, setsortedColumn] = useState<keyof Track>('releaseDate');
 
@@ -122,3 +122,5 @@ export default function BasicTable({ tracks }: Props) {
     </TableContainer>
   );
 }
+
+export default memo(TrackTable);

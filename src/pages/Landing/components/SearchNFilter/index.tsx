@@ -2,10 +2,12 @@ import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { memo } from 'react';
 
 import Filter from './components/Filter';
 import Search from './components/Search';
-export default function SearchNFilter() {
+
+function SearchNFilter() {
   return (
     <>
       <Toolbar>
@@ -44,3 +46,5 @@ export default function SearchNFilter() {
     </>
   );
 }
+
+export default memo(SearchNFilter);

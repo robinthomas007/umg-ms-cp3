@@ -11,21 +11,17 @@ import {
   itemsPerPageAtom,
   pageNumberAtom,
 } from 'pages/Landing/state';
-import * as React from 'react';
-import usePrevious from 'utils/usePrevious';
+import React, { memo } from 'react';
 
 interface Props {
   totalItems?: string;
   totalPages?: string;
 }
 
-export default function TableTools({ totalItems, totalPages }: Props) {
+function TableTools({ totalItems, totalPages }: Props) {
   const [, openCreateProject] = useAtom(IsCreateOrEditModalOpenAtom);
   const [itemsPerPage, setItemsPerPage] = useAtom(itemsPerPageAtom);
   const [pageNumber, setPageNumber] = useAtom(pageNumberAtom);
-
-  const prevtotalPages = usePrevious(totalPages);
-  const prevtotalItems = usePrevious(totalItems);
 
   const handleItemsPerPageChange = (event: SelectChangeEvent) => {
     setItemsPerPage(event.target.value as ItemsPerPage);
@@ -51,11 +47,11 @@ export default function TableTools({ totalItems, totalPages }: Props) {
             </MenuItem>
           ))}
         </Select>
-        &nbsp;&nbsp;of&nbsp;&nbsp;{totalItems ? totalItems : prevtotalItems || '.....'}
+        &nbsp;&nbsp;of&nbsp;&nbsp;{totalItems || '.....'}
         &nbsp;&nbsp;Results
       </Typography>
       <Pagination
-        count={Number(totalPages || prevtotalPages) || 0}
+        count={Number(totalPages) || 0}
         shape="rounded"
         color="primary"
         page={Number(pageNumber)}
@@ -76,3 +72,5 @@ export default function TableTools({ totalItems, totalPages }: Props) {
     </Toolbar>
   );
 }
+
+export default memo(TableTools);
