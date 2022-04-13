@@ -21,7 +21,7 @@ export default function ThemeToggler() {
 
   return (
     <Tooltip title="Toggle Light/Dark Theme">
-      <IconButton onClick={() => toggleColorMode(mode)} sx={{ color: 'navbarIcon' }}>
+      <IconButton onClick={() => toggleColorMode(mode)} sx={{ color: 'white' }}>
         {mode === DARK ? <LightModeIcon /> : <DarkModeIcon />}
       </IconButton>
     </Tooltip>
