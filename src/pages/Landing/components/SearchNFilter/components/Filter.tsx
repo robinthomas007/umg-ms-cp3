@@ -6,8 +6,8 @@ export default function Filter() {
     <IconButton
       sx={{
         borderRadius: 1,
-        height: '2.7rem',
-        width: '2.7rem',
+        height: '40px',
+        width: '40px',
         bgcolor: 'white',
         color: 'dark',
         '&:hover': {

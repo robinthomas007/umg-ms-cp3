@@ -29,7 +29,8 @@ export default function Search() {
       }
       sx={{
         maxWidth: '40rem',
-        pr: 0.5,
+        maxHeight: '40px',
+        pr: 0.2,
         pt: 0.2,
         pb: 0.3,
         bgcolor: 'white',
@@ -39,7 +40,7 @@ export default function Search() {
         <InputAdornment position="end">
           <Button
             variant="contained"
-            sx={{ color: 'white' }}
+            sx={{ color: 'white', width: '88px' }}
             onClick={() => setSearch(input)}
           >
             Search
