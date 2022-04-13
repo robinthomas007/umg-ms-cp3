@@ -9,6 +9,7 @@ const Account = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
+        color: 'white',
       }}
     >
       <IconButton disableRipple sx={{ color: 'white' }}>

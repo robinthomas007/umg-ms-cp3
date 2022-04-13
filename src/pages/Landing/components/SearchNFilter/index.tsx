@@ -1,7 +1,7 @@
-import Chip from '@mui/material/Chip';
+// import Chip from '@mui/material/Chip';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+// import Typography from '@mui/material/Typography';
 import { memo } from 'react';
 
 import Filter from './components/Filter';
@@ -26,7 +26,7 @@ function SearchNFilter() {
           <Search />
         </Stack>
       </Toolbar>
-      <Stack justifyContent={'center'} alignItems="center" direction="row" spacing={1}>
+      {/* <Stack justifyContent={'center'} alignItems="center" direction="row" spacing={1}>
         <Typography variant="body2" component="span">
           Selected Filters:
         </Typography>
@@ -42,7 +42,7 @@ function SearchNFilter() {
           variant="outlined"
           onDelete={console.log}
         />
-      </Stack>
+      </Stack> */}
     </>
   );
 }

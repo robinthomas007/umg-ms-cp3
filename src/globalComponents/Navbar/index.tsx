@@ -1,5 +1,3 @@
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,19 +8,17 @@ import ElasticLogo from './components/ElasticLogo';
 
 const Navbar = () => {
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed" sx={{ backgroundColor: 'dark' }}>
-        <Container maxWidth="xl">
-          <Toolbar disableGutters>
-            <ElasticLogo />
-            <Stack direction="row" spacing={2}>
-              <ThemeToggleButton />
-              <Account />
-            </Stack>
-          </Toolbar>
-        </Container>
-      </AppBar>
-    </Box>
+    <div style={{ backgroundColor: '#212121' }}>
+      <Container maxWidth="xl">
+        <Toolbar disableGutters>
+          <ElasticLogo />
+          <Stack direction="row" spacing={2}>
+            <ThemeToggleButton />
+            <Account />
+          </Stack>
+        </Toolbar>
+      </Container>
+    </div>
   );
 };
 export default Navbar;

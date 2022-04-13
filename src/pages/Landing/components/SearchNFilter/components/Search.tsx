@@ -23,14 +23,25 @@ export default function Search() {
       fullWidth
       onChange={(e) => setInput(e.target.value)}
       startAdornment={
-        <InputAdornment position="start">
+        <InputAdornment position="start" sx={{ color: 'dark' }}>
           <SearchIcon />
         </InputAdornment>
       }
-      sx={{ maxWidth: '40rem', pr: 0.5, pt: 0.2, pb: 0.3 }}
+      sx={{
+        maxWidth: '40rem',
+        pr: 0.5,
+        pt: 0.2,
+        pb: 0.3,
+        bgcolor: 'white',
+        color: 'black',
+      }}
       endAdornment={
         <InputAdornment position="end">
-          <Button variant="contained" onClick={() => setSearch(input)}>
+          <Button
+            variant="contained"
+            sx={{ color: 'white' }}
+            onClick={() => setSearch(input)}
+          >
             Search
           </Button>
         </InputAdornment>

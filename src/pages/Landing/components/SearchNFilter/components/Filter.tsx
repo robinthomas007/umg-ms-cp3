@@ -8,14 +8,13 @@ export default function Filter() {
         borderRadius: 1,
         height: '2.7rem',
         width: '2.7rem',
-        bgcolor: 'primary.main',
-        color: 'primary.contrastText',
+        bgcolor: 'white',
+        color: 'dark',
         '&:hover': {
-          color: 'primary.contrastText',
-          bgcolor: 'primary.dark',
+          color: 'dark',
+          bgcolor: 'white',
         },
       }}
-      color="primary"
     >
       <SettingsIcon />
     </IconButton>

@@ -44,9 +44,9 @@ const LightThemePalette: IPalette = {
 const DarkThemePalette: IPalette = {
   mode: DARK,
   primary: {
-    light: orange[200],
-    main: orange[400],
-    dark: orange[600],
+    light: orange[400],
+    main: orange[600],
+    dark: orange[800],
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
   white: '#fff',

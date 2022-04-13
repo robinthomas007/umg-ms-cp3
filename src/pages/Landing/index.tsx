@@ -36,10 +36,10 @@ function Tracks() {
 
   return (
     <>
-      <Box pt={2.5}>
+      <Box pb={8} bgcolor="dark">
         <SearchNFilter />
       </Box>
-      <Box sx={{ px: 5, pt: 5 }}>
+      <Box sx={{ p: 5 }}>
         <TableTools
           totalItems={data?.totalItems || prevtotalItems}
           totalPages={data?.totalPages || prevtotalPages}
