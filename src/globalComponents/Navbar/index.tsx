@@ -11,7 +11,7 @@ import ElasticLogo from './components/ElasticLogo';
 const Navbar = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar position="fixed" sx={{ backgroundColor: 'dark' }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <ElasticLogo />

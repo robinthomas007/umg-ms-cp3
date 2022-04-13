@@ -53,7 +53,6 @@ function TableTools({ totalItems, totalPages }: Props) {
       <Pagination
         count={Number(totalPages) || 0}
         shape="rounded"
-        color="primary"
         page={Number(pageNumber)}
         onChange={handlePageChange}
       />

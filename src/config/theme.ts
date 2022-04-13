@@ -1,5 +1,5 @@
 import { PaletteMode, PaletteOptions } from '@mui/material';
-import { blue, orange } from '@mui/material/colors';
+import { orange } from '@mui/material/colors';
 import { ThemeOptions } from '@mui/material/styles';
 import { atom } from 'jotai';
 
@@ -23,17 +23,19 @@ export const themeModeAtom = atom<PaletteMode>(getThemeMode());
 
 interface IPalette extends PaletteOptions {
   navbarIcon: string;
+  dark: string;
 }
 
 const LightThemePalette: IPalette = {
   mode: LIGHT,
   primary: {
-    light: blue[600],
-    main: blue[800],
-    dark: blue[900],
+    light: orange[400],
+    main: orange[600],
+    dark: orange[800],
     contrastText: '#fff',
   },
   navbarIcon: '#fff',
+  dark: '#212121',
   action: {
     active: '#212121',
   },
@@ -48,6 +50,7 @@ const DarkThemePalette: IPalette = {
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
   navbarIcon: '#fff',
+  dark: '#212121',
 };
 
 interface ITheme extends ThemeOptions {}
