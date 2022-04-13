@@ -1,5 +1,5 @@
 import { PaletteMode, PaletteOptions } from '@mui/material';
-import { orange } from '@mui/material/colors';
+import { grey, orange } from '@mui/material/colors';
 import { ThemeOptions } from '@mui/material/styles';
 import { atom } from 'jotai';
 
@@ -24,6 +24,7 @@ export const themeModeAtom = atom<PaletteMode>(getThemeMode());
 interface IPalette extends PaletteOptions {
   white: string;
   dark: string;
+  second: string;
 }
 
 const LightThemePalette: IPalette = {
@@ -36,6 +37,7 @@ const LightThemePalette: IPalette = {
   },
   white: '#fff',
   dark: '#212121',
+  second: '#e0e0e0',
   action: {
     active: '#212121',
   },
@@ -49,8 +51,15 @@ const DarkThemePalette: IPalette = {
     dark: orange[800],
     contrastText: 'rgba(0, 0, 0, 0.87)',
   },
+  secondary: {
+    light: grey[400],
+    main: grey[600],
+    dark: grey[800],
+    contrastText: 'rgba(0, 0, 0, 0.87)',
+  },
   white: '#fff',
   dark: '#212121',
+  second: '#e0e0e0',
 };
 
 interface ITheme extends ThemeOptions {}

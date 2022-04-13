@@ -58,13 +58,32 @@ function TableTools({ totalItems, totalPages }: Props) {
       />
       <Stack spacing={1} direction="row">
         <Button
-          variant="outlined"
+          sx={{
+            color: 'dark',
+            bgcolor: 'second',
+            width: '88px',
+            '&:hover': {
+              color: 'dark',
+              bgcolor: 'second',
+            },
+          }}
           startIcon={<AddCircleIcon />}
           onClick={() => openCreateProject(true)}
         >
           Create
         </Button>
-        <Button variant="outlined" startIcon={<FileDownloadIcon />}>
+        <Button
+          sx={{
+            color: 'dark',
+            bgcolor: 'second',
+            width: '88px',
+            '&:hover': {
+              color: 'dark',
+              bgcolor: 'second',
+            },
+          }}
+          startIcon={<FileDownloadIcon />}
+        >
           Export
         </Button>
       </Stack>
