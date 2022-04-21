@@ -98,7 +98,7 @@ function TrackTable({ tracks }: Props) {
                 <TableCell>{row.releaseDate}</TableCell>
                 <TableCell>{row.leakDate}</TableCell>
                 <TableCell padding="none" align="center">
-                  <IconButton color="default">
+                  <IconButton color="primary">
                     <QuestionAnswer />
                   </IconButton>
                 </TableCell>
