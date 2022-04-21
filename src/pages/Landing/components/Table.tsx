@@ -1,28 +1,28 @@
-import { Delete, Edit, QuestionAnswer } from '@mui/icons-material';
+import { Edit, QuestionAnswer } from '@mui/icons-material';
 import {
   Checkbox,
   IconButton,
   Paper,
-  Stack,
   Table,
   TableBody,
   TableCell,
   TableContainer,
   TableRow,
 } from '@mui/material';
-import DataHead, { DataCell, HeadCell, Order } from 'globalComponents/DataTable/DataHead';
+import DataHead, { DataCell, HeadCell } from 'globalComponents/DataTable/DataHead';
 import TableRowSkeleton from 'globalComponents/TableRowSkeleton';
+import { useAtom } from 'jotai';
 import { Track } from 'pages/Landing/query';
-// import { useAtom } from 'jotai';
-import { memo, useState } from 'react';
+import { sortByAtom, sortOrderAtom } from 'pages/Landing/state';
+import { memo } from 'react';
 
 interface Props {
   tracks?: Track[];
 }
 
 function TrackTable({ tracks }: Props) {
-  const [order, setOrder] = useState<Order>('desc');
-  const [sortedColumn, setsortedColumn] = useState<keyof Track>('releaseDate');
+  const [order, setOrder] = useAtom(sortOrderAtom);
+  const [sortedColumn, setsortedColumn] = useAtom(sortByAtom);
 
   const handleSort = (key: keyof Track) => {
     const isAsc = sortedColumn === key && order === 'asc';
@@ -68,7 +68,7 @@ function TrackTable({ tracks }: Props) {
       align: 'center',
     },
     {
-      label: 'Actions',
+      label: 'Edit',
       padding: 'none',
       align: 'center',
     },
@@ -103,14 +103,9 @@ function TrackTable({ tracks }: Props) {
                   </IconButton>
                 </TableCell>
                 <TableCell padding="none" align="center">
-                  <Stack justifyContent={'center'} direction="row" spacing={1}>
-                    <IconButton>
-                      <Edit />
-                    </IconButton>
-                    <IconButton>
-                      <Delete />
-                    </IconButton>
-                  </Stack>
+                  <IconButton color="primary">
+                    <Edit />
+                  </IconButton>
                 </TableCell>
               </TableRow>
             ))

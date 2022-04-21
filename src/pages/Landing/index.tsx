@@ -5,13 +5,21 @@ import SearchNFilter from 'pages/Landing/components/SearchNFilter';
 import Table from 'pages/Landing/components/Table';
 import TableTools from 'pages/Landing/components/TableTools';
 import { useSearchTracks } from 'pages/Landing/query';
-import { itemsPerPageAtom, pageNumberAtom, searchAtom } from 'pages/Landing/state';
+import {
+  itemsPerPageAtom,
+  pageNumberAtom,
+  searchAtom,
+  sortByAtom,
+  sortOrderAtom,
+} from 'pages/Landing/state';
 import { memo, useEffect } from 'react';
 import usePrevious from 'utils/usePrevious';
 
 function Tracks() {
   const { data, mutate } = useSearchTracks();
   const [searchTerm] = useAtom(searchAtom);
+  const [sortColumn] = useAtom(sortByAtom);
+  const [sortOrder] = useAtom(sortOrderAtom);
   const [itemsPerPage] = useAtom(itemsPerPageAtom);
   const [pageNumber, setPageNumber] = useAtom(pageNumberAtom);
 
@@ -19,7 +27,7 @@ function Tracks() {
   const prevtotalPages = usePrevious(data?.totalPages);
 
   const refetchData = () => {
-    mutate({ searchTerm, itemsPerPage, pageNumber });
+    mutate({ searchTerm, itemsPerPage, pageNumber, sortColumn, sortOrder });
   };
 
   useEffect(() => {
@@ -32,7 +40,7 @@ function Tracks() {
 
   useEffect(() => {
     refetchData();
-  }, [searchTerm, itemsPerPage, pageNumber]);
+  }, [searchTerm, itemsPerPage, pageNumber, sortColumn, sortOrder]);
 
   return (
     <>
