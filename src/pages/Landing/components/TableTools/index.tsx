@@ -52,6 +52,7 @@ function TableTools({ totalItems, totalPages }: Props) {
       </Typography>
       <Pagination
         count={Number(totalPages) || 0}
+        boundaryCount={0}
         shape="rounded"
         page={Number(pageNumber)}
         onChange={handlePageChange}
